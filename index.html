@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist preview</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/main.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <h1>Let's build this MF!</h1>
+
+    <form id="findsong">
+        <div class="w-50 mx-auto mb-3 ml-5 mr-5">
+            <label for="formGroupExampleInput" class="form-label">Track</label>
+            <input type="text" class="form-control" id="song" placeholder="Name of the song . . . ">
+        </div>
+        <div class="w-50 mx-auto mb-3 ml-5 mr-5">
+            <label for="formGroupExampleInput2" class="form-label">Artist</label>
+            <input type="text" class="form-control" id="artist" placeholder="Artist name . . .">
+        </div>
+        <button type="submit" class="btn-sm btn-success">Submit</button>
+    </form>
+    <div class="flex-container">
+        <div class="card-group">
+            <div class="card" style="max-width: 540px">
+              <img src="/static/images/ny.jpg"  class="card-img-top" alt="An artist that doesn't do spotify">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+    </div>
+
+</body>
+
+</html>

@@ -37,17 +37,19 @@ const getSong = async (song, artist) => {
 
 // getSong('bang', 'ajr');
 let songlist = []
+document.getElementById('carousel').style.display = 'none'
+
 
 let loadSong = async (song, artist) => {
     let data = await getSong(song, artist);
-    if (data.preview_url == null ) {
+    if (data == undefined || data.preview_url == null ) {
     let lol_card = `<div class="card" style="max-width: 540px">
-        <img src="/static/images/ny.jpg" class="card-img-top" alt="An artist that doesn't do spotify">
-        <div class="card-body">
-            <h5 class="card-song">Song?  No song. . .</h5>
-            <p class="card-artist">This artist might not like spotify (just like the dude in the pic).</p>
-            <p class="card-album">At any rate there's no audio so this won't be added. . . </p>
-        </div>
+    <img src="/static/images/ts.jpg" class="card-img-top" alt="An artist that doesn't do spotify">
+    <div class="card-body">
+        <h5 class="card-song">Song?  No song. . .</h5>
+        <p class="card-artist">Maybe this artist doesn't like spotify (kinda like the lady in this pic)</p>
+        <p class="card-album">At any rate there's no audio so this won't be added. . . </p>
+    </div>
     </div>`;
     document.getElementById('songcard').insertAdjacentHTML('afterbegin', lol_card);
     return
@@ -74,3 +76,16 @@ sform.addEventListener('submit', (event) => {
     loadSong(song, artist); 
     sform.reset();
 });
+
+let slist = async () => {
+    for (i=0; i<songlist.length; i++){
+        let data = await getSong(songlist[i].track, songlist[i].artist);
+        console.log(data)
+        
+    }
+    document.getElementById('topform').style.display = 'none'
+    document.getElementById('topcards').style.display = 'none'
+    document.getElementById('carousel').style.display = 'block'
+    
+};
+

@@ -31,18 +31,17 @@ const getSong = async (song, artist) => {
         console.log("\nSomething went wrong here.  Maybe it was you, maybe it was us. . . either way, Try Again!")
         return
     }
-    console.log(data.tracks.items[0]);
+    console.log(data);
     return data.tracks.items[0]
 }
 
 // getSong('bang', 'ajr');
-
+let songlist = []
 
 let loadSong = async (song, artist) => {
     let data = await getSong(song, artist);
-    console.log(data);
-    if (data.preview_url == null){
-        let lol_card = `<div class="card" style="max-width: 540px">
+    if (data.preview_url == null ) {
+    let lol_card = `<div class="card" style="max-width: 540px">
         <img src="/static/images/ny.jpg" class="card-img-top" alt="An artist that doesn't do spotify">
         <div class="card-body">
             <h5 class="card-song">Song?  No song. . .</h5>
@@ -51,6 +50,7 @@ let loadSong = async (song, artist) => {
         </div>
     </div>`;
     document.getElementById('songcard').insertAdjacentHTML('afterbegin', lol_card);
+    return
     }
     let new_card = `<div class="card" style="max-width: 540px">
     <img src="${data.album.images[0].url}" class="card-img-top" alt="Album cover">
@@ -61,6 +61,8 @@ let loadSong = async (song, artist) => {
     </div>
     </div>`;
     document.getElementById('songcard').insertAdjacentHTML('afterbegin', new_card);
+    songlist.push({track : `${data.name}`, artist : `${data.artists[0].name}`});
+    console.log(songlist)
 }
 
 let sform = document.querySelector('#sform');

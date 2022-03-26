@@ -20,7 +20,7 @@
 <body>
     <h1>Let's build this MF!</h1>
 
-    <form id="findsong">
+    <form id="sform">
         <div class="w-50 mx-auto mb-3 ml-5 mr-5">
             <label for="formGroupExampleInput" class="form-label">Track</label>
             <input type="text" class="form-control" id="song" placeholder="Name of the song . . . ">
@@ -32,16 +32,16 @@
         <button type="submit" class="btn-sm btn-success">Submit</button>
     </form>
     <div class="flex-container">
-        <div class="card-group">
-            <div class="card" style="max-width: 540px">
-              <img src="/static/images/ny.jpg"  class="card-img-top" alt="An artist that doesn't do spotify">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
+        <div id="songcard" class="card-group">
+            <!-- <div class="card" style="max-width: 540px">
+                <img src="/static/images/ny.jpg" class="card-img-top" alt="An artist that doesn't do spotify">
+                <div class="card-body">
+                    <h5 class="card-song"></h5>
+                    <p class="card-artist"></p>
+                    <p class="card-album"></p>
+                </div>
+            </div> -->
+        </div>
     </div>
 
 </body>

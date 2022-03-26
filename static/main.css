@@ -14,3 +14,7 @@ h1 {
     object-fit: cover;
     padding: 5%;
 }
+
+#song, #artist {
+    justify-content: center;
+}

@@ -21,15 +21,23 @@
     <h1>Let's build this MF!</h1>
 
     <form id="sform">
-        <div class="w-50 mx-auto mb-3 ml-5 mr-5">
-            <label for="formGroupExampleInput" class="form-label">Track</label>
-            <input type="text" class="form-control" id="song" placeholder="Name of the song . . . ">
+
+        <div id="formrow" class="row justify-content-center">
+            <div class="col-3 mb-3 song">
+                <!-- <label for="formGroupExampleInput" class="form-label">Track</label> -->
+                <input type="text" class="form-control" id="song" placeholder="Name of the song . . . ">
+            </div>
+            <div class="col-3 mb-3 artist">
+                <!-- <label for="formGroupExampleInput2" class="form-label">Artist</label> -->
+                <input type="text" class="form-control" id="artist" placeholder="Artist name . . .">
+            </div>
+
         </div>
-        <div class="w-50 mx-auto mb-3 ml-5 mr-5">
-            <label for="formGroupExampleInput2" class="form-label">Artist</label>
-            <input type="text" class="form-control" id="artist" placeholder="Artist name . . .">
+        <div class="row justify-content-center">
+            <button type="submit" class="btn-sm btn-success col-2 m-3 mt-3">Add Track</button>
+            <button type="button" class="btn-sm btn-info col-2 m-3 mt-3">Load these to playlist</button>
+
         </div>
-        <button type="submit" class="btn-sm btn-success">Submit</button>
     </form>
     <div class="flex-container">
         <div id="songcard" class="row row-cols-1 row-cols-md-3 g-4">

@@ -80,8 +80,21 @@ sform.addEventListener('submit', (event) => {
 let slist = async () => {
     for (i=0; i<songlist.length; i++){
         let data = await getSong(songlist[i].track, songlist[i].artist);
-        console.log(data)
-        
+
+        let new_slide = `<div class="carousel-item active">
+        <img src="${data.album.images[0].url}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>${data.name}</h5>
+            <p>${data.artists[0].name}</p>
+            <p>${data.album.name}</p>
+            <p>${data.album.track_number}</p>
+        </div>
+    </div>`;
+    document.getElementById('cslides').insertAdjacentHTML('afterbegin', new_slide);
+        let new_btn = `<button type="button" data-bs-target="#carousel" class="active"
+        aria-current="true" data-bs-slide-to="${i}"
+        aria-label="Slide${i+1}"></button>`;
+    document.getElementById('carouselbtns').insertAdjacentHTML('afterbegin', new_btn);
     }
     document.getElementById('topform').style.display = 'none'
     document.getElementById('topcards').style.display = 'none'

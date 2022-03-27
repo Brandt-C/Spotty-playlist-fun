@@ -18,3 +18,10 @@ h1 {
 #song, #artist {
     justify-content: center;
 }
+.carousel-item {
+    width: 100%;
+    max-height: 50vw;
+    object-fit: cover;
+    padding: 5%;
+    
+}

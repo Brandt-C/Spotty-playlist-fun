@@ -81,7 +81,7 @@ let slist = async () => {
     for (i=0; i<songlist.length; i++){
         let data = await getSong(songlist[i].track, songlist[i].artist);
 
-        let new_slide = `<div class="carousel-item active">
+        let new_slide = `<div class="carousel-item active" data-bs-interval="1000">
         <img src="${data.album.images[0].url}" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
             <h5>${data.name}</h5>

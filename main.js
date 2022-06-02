@@ -1,5 +1,6 @@
 const getAuth = async () => {
-    
+    const clientId = '940ca0e54fbb43de8f24d3d57388c089';
+    const clientSecret = '87de30c714ca41a9a305b4e41a1a78fb';
     const response = await fetch('https://accounts.spotify.com/api/token',
         {
             method: 'POST',
@@ -10,7 +11,7 @@ const getAuth = async () => {
             body: 'grant_type=client_credentials'
         });
     const token = await response.json();
-    console.log(token);
+    // console.log(token);
     return token.access_token
 }
 
@@ -25,7 +26,7 @@ const getSong = async (song, artist) => {
                 'Authorization': `Bearer ${token}`
             }
         });
-    console.log(response);
+    // console.log(response);
     let data = await response.json();
     if (response.status != 200) {
         console.log("\nSomething went wrong here.  Maybe it was you, maybe it was us. . . either way, Try Again!")
@@ -72,7 +73,7 @@ sform.addEventListener('submit', (event) => {
     event.preventDefault();
     let song = event.path[0][0].value
     let artist = event.path[0][1].value
-    console.log(song, artist);
+    // console.log(song, artist);
     loadSong(song, artist); 
     sform.reset();
 });
